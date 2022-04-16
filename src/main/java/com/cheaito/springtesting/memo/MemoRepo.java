@@ -13,8 +13,8 @@ public class MemoRepo {
 
     public MemoRepo() {
         memos = new HashMap<>();
-        memos.put("1", Memo.builder().id("1").text("My first memo").build());
-        memos.put("2", Memo.builder().id("2").text("My second memo").build());
+        memos.put("100-0001", Memo.builder().id("100-0001").text("My first memo").build());
+        memos.put("100-0002", Memo.builder().id("100-0002").text("My second memo").build());
     }
 
     public List<Memo> getMemos() {
