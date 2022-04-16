@@ -1,5 +1,7 @@
 package com.cheaito.springtesting.memo;
 
+import com.cheaito.springtesting.memo.domain.Memo;
+import com.cheaito.springtesting.memo.exception.MemoNotFoundException;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -8,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.constraints.Pattern;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/memos",
@@ -23,9 +24,9 @@ public class MemoControllerImpl implements MemoController {
 
     @Override
     @GetMapping("/{id}")
-    public Optional<Memo> getMemoById(
+    public Memo getMemoById(
             @Pattern(regexp = "^[0-9]{3}-[0-9]{4}$", message = "Id must follow format 999-9999")
             @PathVariable String id) {
-        return memoService.getMemo(id);
+        return memoService.getMemo(id).orElseThrow(() -> new MemoNotFoundException("Memo with id " + id + " was not found"));
     }
 }

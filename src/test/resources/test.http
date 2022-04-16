@@ -1,0 +1,10 @@
+### Valid
+GET http://localhost:8080/memos/100-0001
+
+### Malformatted Id
+GET http://localhost:8080/memos/100-00s
+
+### Not Found
+GET http://localhost:8080/memos/100-0100
+
+

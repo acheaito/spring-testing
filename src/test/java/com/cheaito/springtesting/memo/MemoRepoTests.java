@@ -1,5 +1,6 @@
 package com.cheaito.springtesting.memo;
 
+import com.cheaito.springtesting.memo.domain.Memo;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

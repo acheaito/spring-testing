@@ -1,4 +1,4 @@
-package com.cheaito.springtesting.memo;
+package com.cheaito.springtesting.memo.domain;
 
 
 import lombok.Builder;
